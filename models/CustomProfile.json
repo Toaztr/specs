@@ -17,5 +17,8 @@
         "$ref": "./Step.json"
       }
     }
-  }
+  },
+  "required": [
+    "type"
+  ]
 }
