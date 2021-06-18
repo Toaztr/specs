@@ -22,7 +22,20 @@
       }
     },
     "profile": {
-      "$ref": "./Profile.json"
+      "oneOf": [
+        {
+          "$ref": "./GrandiozProfile.json"
+        },
+        {
+          "$ref": "./MonthlyVaryingProfile.json"
+        },
+        {
+          "$ref": "./YearlyVaryingProfile.json"
+        },
+        {
+          "$ref": "./CustomProfile.json"
+        }
+      ]
     },
     "bank": {
       "$ref": "./ActivePartner.v1.json"
