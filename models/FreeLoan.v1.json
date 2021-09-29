@@ -11,17 +11,22 @@
       ]
     },
     "yearly_rate": {
-      "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple.",
-      "maximum": 100,
-      "minimum": 0,
-      "type": "number"
-    },
-    "yearly_rates": {
-      "description": "Taux d'intérêt annuels en %, dans le cadre d'un prêt à taux variable. Mettre 2.1 pour 2.1% par exemple.",
-      "type": "array",
-      "items": {
-        "$ref": "./RatePeriod.v1.json"
-      }
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple."
+        },
+        {
+          "type": "array",
+          "description": "Taux d'intérêt annuels en %, dans le cadre d'un prêt à taux variable. Mettre 2.1 pour 2.1% par exemple. Les périodes doivent couvrir toute la durée du prêt.",
+          "items": {
+            "$ref": "./RatePeriod.v1.json"
+          }
+        }
+      ],
+      "description": "Taux d'intérêt annuel en % (liste dans le cadre d'un prêt à taux variable). Mettre 2.1 pour 2.1% par exemple."
     },
     "max_duration_months": {
       "description": "Durée maximale du prêt, en mois.",
