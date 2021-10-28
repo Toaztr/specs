@@ -17,10 +17,8 @@
       "description": "Part fixe, niveau prêt."
     },
     "variable_part": {
-      "description": "Part variable à appliquer sur le montant de la ligne de prêt.",
-      "minimum": -100,
-      "maximum": 100,
-      "type": "number"
+      "type": "number",
+      "description": "Part variable à appliquer sur le montant de la ligne de prêt."
     }
   }
 }
