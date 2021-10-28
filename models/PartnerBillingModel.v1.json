@@ -1,7 +1,7 @@
 {
   "title": "PartnerBillingModel",
   "type": "object",
-  "description": "Modèle de facturation du partenaire. Si from_amount et to_amount ne sont pas remplis, le modèle de facturation s'appliquera sur l'intégralité du montant du prêt.",
+  "description": "Modèle de facturation du partenaire. \n\nSi from_amount et to_amount ne sont pas remplis, le modèle de facturation s'appliquera sur l'intégralité du montant du prêt, comme: fix_part + montant_du_prêt * variable_part\n\nSinon, la facturation sera calculée comme: fix_part + (to_amount - from_amount) * variable_part\n\n",
   "properties": {
     "from_amount": {
       "type": "number",

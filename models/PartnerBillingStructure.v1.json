@@ -1,35 +1,25 @@
 {
   "title": "PartnerBillingStructure",
   "type": "object",
-  "description": "Structure de facturation du partenaire, par type de prêt et par intervalles de montants de prêts. Si aucun type de prêt n'est précisé, la structure s'appliquera à tous les types de prêts.",
+  "description": "Structure de facturation du partenaire.",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "Type de prêt.",
-      "enum": [
-        "FREE_LOAN",
-        "BRIDGE_LOAN",
-        "PTZ_LOAN",
-        "BOSS_LOAN"
-      ]
-    },
-    "levels": {
+    "partner_billing_structures": {
       "type": "array",
       "items": {
-        "$ref": "./PartnerBillingModel.v1.json"
+        "$ref": "./PartnerBillingStructurePerLoan.v1.json"
       }
     },
     "fix_part": {
       "type": "number",
-      "description": "Part fixe, niveau global."
+      "description": "Part fixe, niveau partenaire."
     },
     "limit": {
       "type": "number",
-      "description": "Montant maximum du comissionnement de ce partenaire, si un maximum existe.",
+      "description": "Montant maximum du commissionnement de ce partenaire, si un maximum existe.",
       "minimum": 0
     }
   },
   "required": [
-    "levels"
+    "partner_billing_structures"
   ]
 }
