@@ -1,0 +1,26 @@
+{
+  "title": "PartnerBillingModel",
+  "type": "object",
+  "description": "Modèle de facturation du partenaire. Si from_amount et to_amount ne sont pas remplis, le modèle de facturation s'appliquera sur l'intégralité du montant du prêt.",
+  "properties": {
+    "from_amount": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Limite basse du montant de prêt sur lequel s'applique ce modèle de facturation."
+    },
+    "to_amount": {
+      "type": "number",
+      "description": "Limite haute du montant de prêt sur lequel s'applique ce modèle de facturation."
+    },
+    "fix_part": {
+      "type": "number",
+      "description": "Part fixe, niveau prêt."
+    },
+    "variable_part": {
+      "description": "Part variable à appliquer sur le montant de la ligne de prêt.",
+      "minimum": -100,
+      "maximum": 100,
+      "type": "number"
+    }
+  }
+}
