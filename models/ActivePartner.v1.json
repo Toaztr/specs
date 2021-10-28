@@ -49,7 +49,7 @@
       "type": "string"
     },
     "billing_structure": {
-      "$ref": "./PartnerBillingStructure.json"
+      "$ref": "./PartnerBillingStructure.v1.json"
     },
     "comment": {
       "description": "Commentaire.",
