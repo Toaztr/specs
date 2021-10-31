@@ -1,5 +1,5 @@
 {
-  "title": "PartnerBillingStructurePerLoan",
+  "title": "PartnerBillingTierPerLoan",
   "type": "object",
   "description": "Structure de facturation du partenaire, par type de prêt et par intervalles de montants de prêts. Si aucun type de prêt n'est précisé, la structure s'appliquera à tous les types de prêts.",
   "properties": {
@@ -13,15 +13,19 @@
         "BOSS_LOAN"
       ]
     },
-    "levels": {
+    "tiers": {
       "type": "array",
       "items": {
         "$ref": "./PartnerBillingModel.v1.json"
       }
     },
-    "fix_part": {
+    "flat_fee": {
       "type": "number",
       "description": "Part fixe, niveau prêt."
+    },
+    "rate": {
+      "type": "number",
+      "description": "Part variable, niveau prêt."
     },
     "limit": {
       "type": "number",
@@ -30,6 +34,6 @@
     }
   },
   "required": [
-    "levels"
+    "tiers"
   ]
 }

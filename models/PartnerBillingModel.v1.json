@@ -6,19 +6,19 @@
     "from_amount": {
       "type": "number",
       "minimum": 0,
-      "description": "Limite basse du montant de prêt sur lequel s'applique ce modèle de facturation."
+      "description": "Limite basse (incluse) du montant de prêt sur lequel s'applique ce modèle de facturation."
     },
     "to_amount": {
       "type": "number",
-      "description": "Limite haute du montant de prêt sur lequel s'applique ce modèle de facturation."
+      "description": "Limite haute (exclue) du montant de prêt sur lequel s'applique ce modèle de facturation."
     },
-    "fix_part": {
+    "flat_fee": {
       "type": "number",
-      "description": "Part fixe, niveau prêt."
+      "description": "Part fixe, à appliquer sur la tranche [0; to_amount - from_amount[."
     },
-    "variable_part": {
+    "rate": {
       "type": "number",
-      "description": "Part variable à appliquer sur le montant de la ligne de prêt."
+      "description": "Part variable, à appliquer sur la tranche [0; to_amount - from_amount[."
     }
   }
 }

@@ -6,10 +6,10 @@
     "partner_billing_structures": {
       "type": "array",
       "items": {
-        "$ref": "./PartnerBillingStructurePerLoan.v1.json"
+        "$ref": "./PartnerBillingTierPerLoan.v1.json"
       }
     },
-    "fix_part": {
+    "flat_fee": {
       "type": "number",
       "description": "Part fixe, niveau partenaire."
     },
