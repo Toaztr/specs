@@ -6,7 +6,7 @@
     "partner_billing_structures": {
       "type": "array",
       "items": {
-        "$ref": "./PartnerBillingTierPerLoan.v1.json"
+        "$ref": "./PartnerBillingTiersPerLoan.v1.json"
       }
     },
     "flat_fee": {
