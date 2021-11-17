@@ -75,7 +75,7 @@ components:
   securitySchemes:
     toaztr_auth:
       type: oauth2
-      description: Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d'authorisation.
+      description: 'Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d''authorisation.'
       flows:
         authorizationCode:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
@@ -228,7 +228,7 @@ components:
       description: Le hash d'un Token
       properties:
         alg:
-          type: string 
+          type: string
           description: Type d'algorithme
           enum:
             - pbkdf2-sha256
@@ -711,7 +711,7 @@ paths:
       operationId: getCasesByName
       tags:
         - case
-      description: Liste les dossiers par leur nom, la recherche n'est pas sensible à la casse
+      description: 'Liste les dossiers par leur nom, la recherche n''est pas sensible à la casse'
       parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[cursor]'
@@ -736,6 +736,39 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       summary: Liste les dossiers par leur nom
+      security:
+        - toaztr_auth:
+            - cases/read
+  /v1/cases/by-category:
+    get:
+      operationId: getCasesByCategory
+      tags:
+        - case
+      description: 'Liste les dossiers par leur categorie, la recherche n''est pas sensible à la casse'
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+        - name: 'filter[category]'
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Statut du dossier à filtrer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les dossiers par leur categorie
       security:
         - toaztr_auth:
             - cases/read
@@ -2127,7 +2160,7 @@ paths:
       summary: Retourne la license en cours de l'utilisateur
       security:
         - toaztr_auth:
-          - license/read
+            - license/read
       tags:
         - license
     delete:
@@ -2200,8 +2233,8 @@ paths:
       description: Liste les membres associés à la license de l'utilisateur
       security:
         - toaztr_auth:
-          - license/read
-      parameters: 
+            - license/read
+      parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
