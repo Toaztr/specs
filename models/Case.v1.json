@@ -26,6 +26,10 @@
         "CANCELED"
       ]
     },
+    "comment": {
+      "type": "string",
+      "description": "Commentaire sur le dossier"
+    },
     "actor": {
       "oneOf": [
         {
