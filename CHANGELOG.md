@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.110.0](https://github.com/Toaztr/specs/compare/v0.109.0...v0.110.0) (2022-11-10)
+
+
+### Features
+
+* minor change ([079ace5](https://github.com/Toaztr/specs/commit/079ace561f4e40380a2fbb1448e7cf0f227e9a9d))
+
 ## [0.109.0](https://github.com/Toaztr/specs/compare/v0.108.0...v0.109.0) (2022-10-16)
 
 
