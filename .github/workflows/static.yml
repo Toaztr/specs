@@ -44,12 +44,12 @@ jobs:
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - name: Generate HTML
-        run: npx redoc-cli bundle reference/toaztr.v1.yaml
+        run: npx redoc-cli bundle reference/toaztr.v1.yaml && ls -al 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: specs
-          path: redoc-static.html
+          path: ./redoc-static.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
