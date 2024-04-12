@@ -44,7 +44,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - name: Generate HTML
-        run: mkdir dist && npx @redocly/cli build-docs reference/toaztr.v1.yaml --output=dist/index.html
+        run: mkdir dist && npx redoc-cli bundle reference/toaztr.v1.yaml --output=dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
