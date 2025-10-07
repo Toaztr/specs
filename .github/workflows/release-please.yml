@@ -62,7 +62,7 @@ jobs:
       - run: cp dist/toaztr* pkg/pypi/src/toaztr_specs/
       - uses: actions/setup-python@v2.2.2
         with:
-          python-version: '3.8'
+          python-version: '3.14'
       - run: python -m pip install build twine --user
         working-directory: ./pkg/pypi
       - run: python -m build --sdist --wheel --outdir dist/
